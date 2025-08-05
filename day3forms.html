@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form</title>
+</head>
+<body>
+	<h2>REGISTRATION FORM</h2>
+
+	<form>
+
+		<fieldset>
+			<legend>Personal Details</legend>
+			<p><b>Enter your name</b></p>
+			<label for="fname">First Name: </label><br>
+			<input type="text" id="fname" name="fname"><br>
+			<label for="lname">Last Name: </label><br>
+			<input type="text" id="lname" name="lname"><br>
+			<label for="password">Password:</label><br>
+			<input type="password" id="password" name="password" placeholder="Enter password"><br>
+
+			<label for="birthday">Birthday:</label><br>
+            <input type="date" id="birthday" name="birthday"><br><br>
+		</fieldset>
+
+		<br>
+
+		<fieldset>
+			<legend>Gender</legend>
+			<p><b>Select your Gender</b></p>
+			<input type="radio" id="male" name="gender" value="Male">
+	  		<label for="male">Male</label><br>
+
+	  		<input type="radio" id="female" name="gender" value="Female">
+	  		<label for="female">Female</label><br>
+
+	  		<input type="radio" id="other" name="gender" value="Other">
+	  		<label for="other">Other</label>
+		</fieldset>
+
+		<br>
+
+		<fieldset>
+			<legend>Contact Preferences</legend>
+			<p><b>Select the way of Contact</b></p>
+	  		<input type="checkbox" name="contact" value="email">Email  
+			<input type="checkbox" name="contact" value="phone">Phone  
+			<input type="checkbox" name="contact" value="sms">SMS  
+			<input type="checkbox" name="contact" value="whatsapp">WhatsApp 
+		</fieldset>
+
+		<br>
+
+		<fieldset>
+			<legend>Education Details</legend>
+			<p><b>Education</b></p>
+			<label for="education">Education:</label>
+			<select id="education" name="education">
+		  		<option value="school">School</option>
+		  		<option value="diploma">Diploma</option>
+		  		<option value="graduate">Graduate</option>
+		  		<option value="postgraduate">Postgraduate</option>
+			</select>
+		</fieldset>
+
+		<br>
+
+		<fieldset>
+			<legend>Feedback</legend>
+			<label for="feedback">Any feedback or suggestions?</label><br>
+			<textarea id="feedback" name="feedback" rows="4" cols="40" placeholder="Write your thoughts..."></textarea>
+		</fieldset>
+
+		<br>
+
+		<button type="button" onclick="alert('Form saved! Thank you for visiting :)')">Submit</button>
+
+	</form>
+
+</body>
+</html>
