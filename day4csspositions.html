@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Delicious Cafe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linen;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: 600;
+  z-index: 1000;
+  letter-spacing: 1px;
+}
+
+.hero {
+  position: relative;
+  height: 200px;
+  text-align: left;
+  background: url('https://via.placeholder.com/1200x350?text=Welcome+to+Delicious+Cafe') no-repeat center center/cover;
+  margin-top: 60px;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.specials {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f8f8;
+}
+
+.specials h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.dish {
+  display: inline-block;
+  margin: 50px;
+  position: static; /* STATIC */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish img {
+  width: 200px;
+  border-radius: 12px;
+}
+
+.dish:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  background: crimson;
+  color: white;
+  padding: 6px 14px;
+  top: -15px;
+  left: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.menu {
+  padding: 50px 20px;
+}
+
+.sticky-heading {
+  position: sticky;
+  top: 60px;
+  background: #fff;
+  padding: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 25px;
+}
+
+.menu-category {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.menu p {
+  font-size: 18px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between; /* pushes price to the right */
+  max-width: 500px; /* keeps it neat */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.order-btn:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">Delicious Café</div>
+
+<div class="hero">
+  <div class="hero-text">Welcome to Delicious Café <br> Fresh & Tasty Every Day!</div>
+</div>
+
+<div class="specials">
+  <h2>Today's Specials</h2>
+  <div class="dish">
+    <img src="https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2503,h_2503,c_limit/Smashburger-recipe-120219.jpg" alt="Dish">
+    <div class="badge">Best Seller</div>
+    <p>Cheese Burger</p>
+  </div>
+
+  <div class="dish">
+    <img src="https://www.thursdaynightpizza.com/wp-content/uploads/2022/06/veggie-pizza-featured-image-3.png" alt="Dish">
+    <div class="badge">New</div>
+    <p>Veggie Pizza</p>
+  </div>
+
+  <div class="dish">
+    <img src="https://www.hersheyland.com/content/dam/hersheyland/en-us/recipes/recipe-images/2-hersheys-perfectly-chocolate-chocolate-cake-recipe-hero.jpg" alt="Dish">
+    <div class="badge">Special</div>
+    <p>Chocolate Cake</p>
+  </div>
+
+   <div class="dish">
+    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/paneer-butter-masala-recipe.jpg" alt="Dish">
+    <div class="badge">Best Seller</div>
+    <p>Paneer Butter Masala</p>
+  </div>
+
+  <div class="dish">
+    <img src="https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__700_0_0_0_auto.jpg" alt="Dish">
+    <div class="badge">New</div>
+    <p>Masala Dosa</p>
+  </div>
+
+  <div class="dish">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDKmyYeGoiXe4mN_XJpQS72bOA2ixCayuWjQ&s" alt="Dish">
+    <div class="badge">Special</div>
+    <p>Hakka Noodles</p>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="sticky-heading">Our Menu</div>
+  <div class="menu-category">Starters</div>
+  <p>Paneer Tikka <span>₹180</span></p>
+  <p>Veg Spring Rolls <span>₹140</span></p>
+  <p>Hara Bhara Kebab <span>₹160</span></p>
+  <p>Cheese Corn Balls <span>₹150</span></p>
+
+  <div class="menu-category">North Indian</div>
+  <p>Paneer Butter Masala <span>₹220</span></p>
+  <p>Dal Makhani <span>₹180</span></p>
+  <p>Chole Bhature <span>₹150</span></p>
+  <p>Butter Naan <span>₹40</span></p>
+
+  <div class="menu-category">South Indian</div>
+  <p>Masala Dosa <span>₹120</span></p>
+  <p>Idli Sambhar <span>₹90</span></p>
+  <p>Medu Vada <span>₹100</span></p>
+  <p>Upma <span>₹80</span></p>
+
+  <div class="menu-category">Chinese</div>
+  <p>Veg Hakka Noodles <span>₹150</span></p>
+  <p>Chilli Paneer <span>₹180</span></p>
+  <p>Veg Manchurian <span>₹160</span></p>
+  <p>Fried Rice <span>₹140</span></p>
+
+  <div class="menu-category">Soups</div>
+  <p>Sweet Corn Soup <span>₹90</span></p>
+  <p>Hot & Sour Soup <span>₹100</span></p>
+  <p>Tomato Soup <span>₹80</span></p>
+
+  <div class="menu-category">Desserts</div>
+  <p>Gulab Jamun <span>₹70</span></p>
+  <p>Rasgulla <span>₹80</span></p>
+  <p>Ice Cream (3 Scoops) <span>₹120</span></p>
+
+  <div class="menu-category">Beverages</div>
+  <p>Masala Chai <span>₹30</span></p>
+  <p>Cold Coffee <span>₹90</span></p>
+  <p>Lassi (Sweet/Salted) <span>₹60</span></p>
+  <p>Fresh Lime Soda <span>₹50</span></p>
+</div>
+
+<div class="order-btn">Order Now</div>
+
+</body>
+</html>
