@@ -8,7 +8,7 @@
 <style>
 html {
   scroll-behavior: smooth;
-}
+  }
 
 body {
   margin: 0;
@@ -20,15 +20,42 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 96%;
   background: #2c3e50;
   color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 24px;
   font-weight: 600;
-  z-index: 1000;
-  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-left: 25px;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 50;
+  transition: background 0.3s;
+}
+
+.navbar li a:hover {
+  background: #f39c12;
+  border-radius: 2px;
 }
 
 .hero {
@@ -63,7 +90,6 @@ body {
 .dish {
   display: inline-block;
   margin: 50px;
-  position: static; /* STATIC */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -78,16 +104,14 @@ body {
 }
 
 .badge {
-  position: relative;
   display: inline-block;
   background: crimson;
   color: white;
   padding: 6px 14px;
-  top: -15px;
-  left: 15px;
   font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
+  margin-top: 8px;
 }
 
 .menu {
@@ -117,10 +141,62 @@ body {
   font-size: 18px;
   margin: 8px 0;
   display: flex;
-  justify-content: space-between; /* pushes price to the right */
-  max-width: 500px; /* keeps it neat */
+  justify-content: space-between;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.contact {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 2px solid #f39c12;
+}
+
+.contact button {
+  background: #f39c12;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #e67e22;
 }
 
 .order-btn {
@@ -145,13 +221,21 @@ body {
 </head>
 <body>
 
-<div class="navbar">Delicious Café</div>
+<div class="navbar">
+  <div class="logo">Delicious Café</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#specials">Specials</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
 
-<div class="hero">
+<div class="hero" id="home">
   <div class="hero-text">Welcome to Delicious Café <br> Fresh & Tasty Every Day!</div>
 </div>
 
-<div class="specials">
+<div class="specials" id="specials">
   <h2>Today's Specials</h2>
   <div class="dish">
     <img src="https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2503,h_2503,c_limit/Smashburger-recipe-120219.jpg" alt="Dish">
@@ -171,7 +255,7 @@ body {
     <p>Chocolate Cake</p>
   </div>
 
-   <div class="dish">
+  <div class="dish">
     <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/paneer-butter-masala-recipe.jpg" alt="Dish">
     <div class="badge">Best Seller</div>
     <p>Paneer Butter Masala</p>
@@ -190,7 +274,7 @@ body {
   </div>
 </div>
 
-<div class="menu">
+<div class="menu" id="menu">
   <div class="sticky-heading">Our Menu</div>
   <div class="menu-category">Starters</div>
   <p>Paneer Tikka <span>₹180</span></p>
@@ -231,6 +315,17 @@ body {
   <p>Cold Coffee <span>₹90</span></p>
   <p>Lassi (Sweet/Salted) <span>₹60</span></p>
   <p>Fresh Lime Soda <span>₹50</span></p>
+</div>
+
+<div class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Reserve your table or ask a question:</p>
+  <form>
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" rows="4" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
 </div>
 
 <div class="order-btn">Order Now</div>
