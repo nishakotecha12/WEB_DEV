@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIGITAL MARKETING</title>
+
+  <style>
+    body{
+      margin: 0;
+      font-family: Arial, cursive;
+      background: linen;
+    }
+
+    header{
+      background: burlywood;
+      color: black;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1{
+      margin: 0;
+    }
+
+    nav a{
+      color: black;
+      margin: 0 10px;
+    }
+
+    nav a:hover{
+      color: floralwhite;
+    }
+
+    .slider{
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .slides img{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .cards{
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card{
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+    }
+
+    .card img{
+      width: 100%;
+      border-radius: 8px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3{
+      margin: 10px 0;
+    }
+
+    .contact {
+  background: peachpuff ;
+  color: black;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 2px solid #f39c12;
+}
+
+.contact button {
+  background: brown;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #e67e22;
+}
+
+    footer{
+      background: burlywood;
+      color: black;
+      text-align: center;
+      padding: 15px 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Digital Marketing</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="Marketing 1">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Marketing 2">
+      <img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40" alt="Marketing 3">
+    </div>
+  </div>
+
+  <section class="cards">
+    <div class="card">
+      <img src="https://static.wingify.com/gcp/uploads/sites/18/2023/02/SEO.png" alt="SEO">
+        <h3>SEO Optimization</h3>
+        <p>Improve your website ranking and visibility in search results.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="Social Media">
+      <h3>Social Media Marketing</h3>
+      <p>Engage customers and grow your brand on social platforms.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Email Marketing">
+      <h3>Email Campaigns</h3>
+      <p>Reach your audience directly with personalized messages.</p>
+    </div>
+  </section>
+
+
+<div class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Reserve your table or ask a question:</p>
+  <form>
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" rows="4" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Digital Marketing Agency | Designed By Nisha</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slides img");
+
+    function showSlides() {
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  </script>
+
+</body>
+</html>
