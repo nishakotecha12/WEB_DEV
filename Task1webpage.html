@@ -19,19 +19,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      position: relative;
     }
 
     header h1{
       margin: 0;
     }
 
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
     nav a{
       color: black;
-      margin: 0 10px;
+      text-decoration: none;
     }
 
     nav a:hover{
       color: floralwhite;
+    }
+
+      .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: black;
     }
 
     .slider{
@@ -77,56 +98,56 @@
     }
 
     .contact {
-  background: peachpuff ;
-  color: black;
-  text-align: center;
-  padding: 60px 20px;
-}
+      background: peachpuff ;
+      color: black;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.contact h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-}
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
 
-.contact p {
-  font-size: 18px;
-  margin-bottom: 25px;
-}
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
 
-.contact form {
-  max-width: 500px;
-  margin: 0 auto;
-}
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-.contact input:focus,
-.contact textarea:focus {
-  outline: 2px solid #f39c12;
-}
+    .contact input:focus,
+    .contact textarea:focus {
+      outline: 2px solid #f39c12;
+    }
 
-.contact button {
-  background: brown;
-  color: white;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+    .contact button {
+      background: brown;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-.contact button:hover {
-  background: #e67e22;
-}
+    .contact button:hover {
+      background: #e67e22;
+    }
 
     footer{
       background: burlywood;
@@ -135,13 +156,51 @@
       padding: 15px 10px;
     }
 
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: burlywood;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .slider {
+        height: auto;
+      }
+      .slides img {
+        height: auto;
+      }
+      .card {
+        width: 90%;
+      }
+      .contact {
+        padding: 40px 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Digital Marketing</h1>
-    <nav>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-links">
       <a href="#">Home</a>
       <a href="#">Services</a>
       <a href="#">About</a>
@@ -175,23 +234,23 @@
     </div>
   </section>
 
-
-<div class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>Reserve your table or ask a question:</p>
-  <form>
-    <input type="text" placeholder="Your Name" required><br>
-    <input type="email" placeholder="Your Email" required><br>
-    <textarea placeholder="Your Message" rows="4" required></textarea><br>
-    <button type="submit">Send Message</button>
-  </form>
-</div>
+  <div class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Ask a question:</p>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Your Message" rows="4" required></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
   <footer>
     <p>&copy; 2025 Digital Marketing Agency | Designed By Nisha</p>
   </footer>
 
   <script>
+    
     let slideIndex = 0;
     const slides = document.querySelectorAll(".slides img");
 
@@ -203,6 +262,14 @@
       setTimeout(showSlides, 3000);
     }
     showSlides();
+
+    
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   </script>
 
 </body>
